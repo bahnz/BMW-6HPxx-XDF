@@ -1871,12 +1871,12 @@ To get a proper shift Ongoing/Offgoing pressure and TQ correction have to be ali
     </XDFAXIS>
     <XDFAXIS id="z">
       <EMBEDDEDDATA mmedaddress="0x5AEA2" mmedelementsizebits="8" mmedrowcount="4" mmedcolcount="4" />
-      <units>-</units>
+      <units>ms</units>
       <decimalpl>0</decimalpl>
       <min>0.0</min>
-      <max>255.0</max>
+      <max>2550.0</max>
       <outputtype>2</outputtype>
-      <MATH equation="X">
+      <MATH equation="10.000000 * X">
         <VAR id="X" />
       </MATH>
     </XDFAXIS>
