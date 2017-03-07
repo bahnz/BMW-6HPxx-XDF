@@ -1556,7 +1556,7 @@ To get a proper shift Ongoing/Offgoing pressure and TQ correction have to be ali
     </XDFAXIS>
     <XDFAXIS id="y" uniqueid="0x0">
       <EMBEDDEDDATA mmedaddress="0x5ADD6" mmedelementsizebits="8" mmedmajorstridebits="8" />
-      <units>km/h</units>
+      <units>Nm</units>
       <indexcount>4</indexcount>
       <decimalpl>0</decimalpl>
       <outputtype>2</outputtype>
@@ -1564,7 +1564,7 @@ To get a proper shift Ongoing/Offgoing pressure and TQ correction have to be ali
       <datatype>0</datatype>
       <unittype>0</unittype>
       <DALINK index="0" />
-      <MATH equation="0.042000 * X">
+      <MATH equation="6.000000 * X+ -204.000000">
         <VAR id="X" />
       </MATH>
     </XDFAXIS>
