@@ -1,31 +1,31 @@
-<!-- Changes pulled from bradsm87 by JMoroni on 03/11/2017 -->
+<!-- Changes pulled from bradsm87 by JMoroni on 04/15/2017 -->
 <XDFFORMAT version="1.50">
   <XDFHEADER>
     <flags>0x1</flags>
     <fileversion>Version 1</fileversion>
-    <deftitle>test\6hp_xdf_v11</deftitle>
+    <deftitle>test\tuner_pro_xdf</deftitle>
     <description>Original</description>
     <author>mesim translator, modified by dave205t</author>
     <baseoffset>0</baseoffset>
     <DEFAULTS datasizeinbits="8" sigdigits="2" outputtype="1" signed="0" lsbfirst="1" float="0" />
     <REGION type="0xFFFFFFFF" startaddress="0x0" size="0x100000" regionflags="0x0" name="Binary File" desc="This region describes the bin file edited by this XDF" />
-    <CATEGORY index="0x0" name="Common Maps Upshift" />
+    <CATEGORY index="0x0" name="Common Maps Upshift Offgoing Clutch" />
     <CATEGORY index="0x1" name="Hexdump" />
     <CATEGORY index="0x2" name="Meine Kennfelder" />
     <CATEGORY index="0x3" name="Misc." />
     <CATEGORY index="0x4" name="Shift Pressure Neutral Shifts" />
-    <CATEGORY index="0x5" name="Shift Pressure Upshift D Mode" />
-    <CATEGORY index="0x6" name="Shift Pressure Upshift M Mode (Alpina)" />
-    <CATEGORY index="0x7" name="Shift Pressure Upshift S/M Mode" />
+    <CATEGORY index="0x5" name="Shift Pressure Upshift D Mode Ongoing Clutch" />
+    <CATEGORY index="0x6" name="Shift Pressure Upshift M Mode (Alpina) Ongoing Clutch" />
+    <CATEGORY index="0x7" name="Shift Pressure Upshift S/M Mode Ongoing Clutch" />
     <CATEGORY index="0x8" name="Shiftmaps" />
     <CATEGORY index="0x9" name="TCC" />
     <CATEGORY index="0xA" name="TQ Management D Mode Upshift" />
     <CATEGORY index="0xB" name="TQ Management M Mode (Alpina) Upshift" />
     <CATEGORY index="0xC" name="TQ Management S/M Mode Upshift" />
-    <CATEGORY index="0x13" name="Common Maps Upshift Breakpoints" />
-    <CATEGORY index="0x14" name="Shift Pressure Upshift D Mode Breakpoints" />
-    <CATEGORY index="0x15" name="Shift Pressure Upshift M Mode (Alpina) Breakpoints" />
-    <CATEGORY index="0x16" name="Shift Pressure Upshift S/M Mode Breakpoints" />
+    <CATEGORY index="0x13" name="Common Maps Upshift Offgoing Clutch Breakpoints" />
+    <CATEGORY index="0x14" name="Shift Pressure Upshift D Mode Ongoing Clutch Breakpoints" />
+    <CATEGORY index="0x15" name="Shift Pressure Upshift M Mode (Alpina) Ongoing Clutch Breakpoints" />
+    <CATEGORY index="0x16" name="Shift Pressure Upshift S/M Mode Ongoing Clutch Breakpoints" />
     <CATEGORY index="0x17" name="Shiftmaps Breakpoints" />
   </XDFHEADER>
   <XDFTABLE uniqueid="0x0" flags="0x0">
@@ -268,6 +268,250 @@
       </MATH>
     </XDFAXIS>
   </XDFTABLE>
+  <XDFTABLE uniqueid="0x121A" flags="0x0">
+    <title>Uphill A1 Throttle (Different between stock and Alpina)</title>
+    <CATEGORYMEM index="0" category="9" />
+    <CATEGORYMEM index="1" category="24" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedelementsizebits="8" mmedmajorstridebits="-32" mmedminorstridebits="0" />
+      <indexcount>1</indexcount>
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="0.00" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedaddress="0x6ED14" mmedelementsizebits="16" mmedcolcount="13" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>13</indexcount>
+      <decimalpl>1</decimalpl>
+      <outputtype>2</outputtype>
+      <embedinfo type="1" />
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <MATH equation="X/10">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedaddress="0x6ED14" mmedelementsizebits="16" mmedrowcount="13" mmedmajorstridebits="0" mmedminorstridebits="0" />
+      <decimalpl>1</decimalpl>
+      <min>0.000000</min>
+      <max>255.000000</max>
+      <outputtype>2</outputtype>
+      <MATH equation="X/10">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFTABLE uniqueid="0x23F5" flags="0x0">
+    <title>HS 1-&gt;2 Torque (Nm)</title>
+    <CATEGORYMEM index="0" category="1" />
+    <CATEGORYMEM index="1" category="20" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedelementsizebits="8" mmedmajorstridebits="-32" mmedminorstridebits="0" />
+      <units>Nm</units>
+      <indexcount>1</indexcount>
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="0.00" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedaddress="0x54488" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <units>Nm</units>
+      <indexcount>10</indexcount>
+      <outputtype>2</outputtype>
+      <embedinfo type="1" />
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <MATH equation="X*6-204">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedaddress="0x54488" mmedelementsizebits="16" mmedrowcount="10" mmedmajorstridebits="0" mmedminorstridebits="0" />
+      <units>Nm</units>
+      <decimalpl>2</decimalpl>
+      <min>0.000000</min>
+      <max>255.000000</max>
+      <outputtype>2</outputtype>
+      <MATH equation="X*6-204">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFTABLE uniqueid="0x3829" flags="0x0">
+    <title>HS 2-&gt;3 Torque (Nm)</title>
+    <CATEGORYMEM index="0" category="1" />
+    <CATEGORYMEM index="1" category="20" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedelementsizebits="8" mmedmajorstridebits="-32" mmedminorstridebits="0" />
+      <units>Nm</units>
+      <indexcount>1</indexcount>
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="0.00" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedaddress="0x54618" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <units>Nm</units>
+      <indexcount>10</indexcount>
+      <outputtype>2</outputtype>
+      <embedinfo type="1" />
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <MATH equation="X*6-204">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedaddress="0x54618" mmedelementsizebits="16" mmedrowcount="10" mmedmajorstridebits="0" mmedminorstridebits="0" />
+      <units>Nm</units>
+      <decimalpl>2</decimalpl>
+      <min>0.000000</min>
+      <max>255.000000</max>
+      <outputtype>2</outputtype>
+      <MATH equation="X*6-204">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFTABLE uniqueid="0x4548" flags="0x0">
+    <title>HS 3-&gt;4 Torque (Nm)</title>
+    <CATEGORYMEM index="0" category="1" />
+    <CATEGORYMEM index="1" category="20" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedelementsizebits="8" mmedmajorstridebits="-32" mmedminorstridebits="0" />
+      <units>Nm</units>
+      <indexcount>1</indexcount>
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="0.00" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedaddress="0x547A8" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <units>Nm</units>
+      <indexcount>10</indexcount>
+      <outputtype>2</outputtype>
+      <embedinfo type="1" />
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <MATH equation="X*6-204">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedaddress="0x547A8" mmedelementsizebits="16" mmedrowcount="10" mmedmajorstridebits="0" mmedminorstridebits="0" />
+      <units>Nm</units>
+      <decimalpl>2</decimalpl>
+      <min>0.000000</min>
+      <max>255.000000</max>
+      <outputtype>2</outputtype>
+      <MATH equation="X*6-204">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFTABLE uniqueid="0x1B63" flags="0x0">
+    <title>HS 4-&gt;5 Torque (Nm)</title>
+    <CATEGORYMEM index="0" category="1" />
+    <CATEGORYMEM index="1" category="20" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedelementsizebits="8" mmedmajorstridebits="-32" mmedminorstridebits="0" />
+      <units>Nm</units>
+      <indexcount>1</indexcount>
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="0.00" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedaddress="0x54938" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <units>Nm</units>
+      <indexcount>10</indexcount>
+      <outputtype>2</outputtype>
+      <embedinfo type="1" />
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <MATH equation="X*6-204">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedaddress="0x54938" mmedelementsizebits="16" mmedrowcount="10" mmedmajorstridebits="0" mmedminorstridebits="0" />
+      <units>Nm</units>
+      <decimalpl>2</decimalpl>
+      <min>0.000000</min>
+      <max>255.000000</max>
+      <outputtype>2</outputtype>
+      <MATH equation="X*6-204">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFTABLE uniqueid="0x162A" flags="0x0">
+    <title>HS 5-&gt;6 Torque (Nm)</title>
+    <CATEGORYMEM index="0" category="1" />
+    <CATEGORYMEM index="1" category="20" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedelementsizebits="8" mmedmajorstridebits="-32" mmedminorstridebits="0" />
+      <units>Nm</units>
+      <indexcount>1</indexcount>
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="0.00" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedaddress="0x54AC8" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <units>Nm</units>
+      <indexcount>10</indexcount>
+      <outputtype>2</outputtype>
+      <embedinfo type="1" />
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <MATH equation="X*6-204">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedaddress="0x54AC8" mmedelementsizebits="16" mmedrowcount="10" mmedmajorstridebits="0" mmedminorstridebits="0" />
+      <units>Nm</units>
+      <decimalpl>2</decimalpl>
+      <min>0.000000</min>
+      <max>255.000000</max>
+      <outputtype>2</outputtype>
+      <MATH equation="X*6-204">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
   <XDFTABLE uniqueid="0x0" flags="0x0">
     <title>BMW Project#</title>
     <CATEGORYMEM index="0" category="4" />
@@ -332,7 +576,7 @@
     <description>Shift Pressure maps tell the TCU what main pressure is to be applied during a shift. In each shift 2 pressure maps are involved. One for the ongoing, one for the offgoing clutch. While offgoing maps are the same for D/S/M mode, the ongoing clutches use different maps for each mode.&#013;&#010;&#013;&#010;To get a proper shift Ongoing/Offgoing pressure and TQ correction have to be aligned.</description>
     <CATEGORYMEM index="0" category="1" />
     <XDFAXIS id="x" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x54478" mmedelementsizebits="16" mmedcolcount="8" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x54478" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>U/Min</units>
       <indexcount>8</indexcount>
       <decimalpl>0</decimalpl>
@@ -346,7 +590,7 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x54488" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedtypeflags="0x01" mmedaddress="0x54488" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>U/min</units>
       <indexcount>10</indexcount>
       <decimalpl>0</decimalpl>
@@ -375,7 +619,7 @@
     <title>HS 2-&gt;3</title>
     <CATEGORYMEM index="0" category="1" />
     <XDFAXIS id="x" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x54608" mmedelementsizebits="16" mmedcolcount="8" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x54608" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>U/Min</units>
       <indexcount>8</indexcount>
       <decimalpl>0</decimalpl>
@@ -389,7 +633,7 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x54618" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x54618" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>Nm</units>
       <indexcount>10</indexcount>
       <decimalpl>0</decimalpl>
@@ -418,7 +662,7 @@
     <title>HS 3-&gt;4</title>
     <CATEGORYMEM index="0" category="1" />
     <XDFAXIS id="x" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x54798" mmedelementsizebits="16" mmedcolcount="8" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x54798" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>U/Min</units>
       <indexcount>8</indexcount>
       <decimalpl>0</decimalpl>
@@ -432,7 +676,7 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x547A8" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x547A8" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>Nm</units>
       <indexcount>10</indexcount>
       <decimalpl>0</decimalpl>
@@ -461,7 +705,7 @@
     <title>HS 4-&gt;5</title>
     <CATEGORYMEM index="0" category="1" />
     <XDFAXIS id="x" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x54928" mmedelementsizebits="16" mmedcolcount="8" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x54928" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>U/Min</units>
       <indexcount>8</indexcount>
       <decimalpl>0</decimalpl>
@@ -475,7 +719,7 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x54938" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x54938" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>Nm</units>
       <indexcount>10</indexcount>
       <decimalpl>0</decimalpl>
@@ -504,7 +748,7 @@
     <title>HS 5-&gt;6</title>
     <CATEGORYMEM index="0" category="1" />
     <XDFAXIS id="x" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x54AB8" mmedelementsizebits="16" mmedcolcount="8" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x54AB8" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>U/Min</units>
       <indexcount>8</indexcount>
       <decimalpl>0</decimalpl>
@@ -518,7 +762,7 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x54AC8" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x54AC8" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>Nm</units>
       <indexcount>10</indexcount>
       <decimalpl>0</decimalpl>
@@ -548,7 +792,7 @@
     <description>Shift Pressure maps tell the TCU what main pressure is to be applied during a shift. In each shift 2 pressure maps are involved. One for the ongoing, one for the offgoing clutch. While offgoing maps are the same for D/S/M mode, the ongoing clutches use different maps for each mode.&#013;&#010;&#013;&#010;To get a proper shift Ongoing/Offgoing pressure and TQ correction have to be aligned.</description>
     <CATEGORYMEM index="0" category="6" />
     <XDFAXIS id="x" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x571C8" mmedelementsizebits="16" mmedcolcount="8" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x571C8" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>U/Min</units>
       <indexcount>8</indexcount>
       <decimalpl>0</decimalpl>
@@ -562,7 +806,7 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x571D8" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x571D8" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>Nm</units>
       <indexcount>10</indexcount>
       <decimalpl>0</decimalpl>
@@ -591,7 +835,7 @@
     <title>HS 2-&gt;3</title>
     <CATEGORYMEM index="0" category="6" />
     <XDFAXIS id="x" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x57334" mmedelementsizebits="16" mmedcolcount="8" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x57334" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>U/Min</units>
       <indexcount>8</indexcount>
       <decimalpl>0</decimalpl>
@@ -605,7 +849,7 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x57344" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x57344" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>Nm</units>
       <indexcount>10</indexcount>
       <decimalpl>0</decimalpl>
@@ -634,7 +878,7 @@
     <title>HS 3-&gt;4</title>
     <CATEGORYMEM index="0" category="6" />
     <XDFAXIS id="x" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x574A0" mmedelementsizebits="16" mmedcolcount="8" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x574A0" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>U/Min</units>
       <indexcount>8</indexcount>
       <decimalpl>0</decimalpl>
@@ -648,7 +892,7 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x574B0" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x574B0" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>Nm</units>
       <indexcount>10</indexcount>
       <decimalpl>0</decimalpl>
@@ -677,7 +921,7 @@
     <title>HS 4-&gt;5</title>
     <CATEGORYMEM index="0" category="6" />
     <XDFAXIS id="x" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x5760C" mmedelementsizebits="16" mmedcolcount="8" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x5760C" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>U/Min</units>
       <indexcount>8</indexcount>
       <decimalpl>0</decimalpl>
@@ -691,7 +935,7 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x5761C" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x5761C" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>Nm</units>
       <indexcount>10</indexcount>
       <decimalpl>0</decimalpl>
@@ -720,7 +964,7 @@
     <title>HS 5-&gt;6</title>
     <CATEGORYMEM index="0" category="6" />
     <XDFAXIS id="x" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x57778" mmedelementsizebits="16" mmedcolcount="8" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x57778" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>U/Min</units>
       <indexcount>8</indexcount>
       <decimalpl>0</decimalpl>
@@ -734,7 +978,7 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x57788" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x57788" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>Nm</units>
       <indexcount>10</indexcount>
       <decimalpl>0</decimalpl>
@@ -893,7 +1137,7 @@
     <title>HS 4-&gt;5</title>
     <CATEGORYMEM index="0" category="8" />
     <XDFAXIS id="x" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x57E70" mmedelementsizebits="16" mmedcolcount="8" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x57E70" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>U/Min</units>
       <indexcount>8</indexcount>
       <decimalpl>0</decimalpl>
@@ -907,7 +1151,7 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x57E80" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x57E80" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>Nm</units>
       <indexcount>10</indexcount>
       <decimalpl>0</decimalpl>
@@ -980,7 +1224,7 @@
     <description>Shift Pressure maps tell the TCU what main pressure is to be applied during a shift. In each shift 2 pressure maps are involved. One for the ongoing, one for the offgoing clutch. While offgoing maps are the same for D/S/M mode, the ongoing clutches use different maps for each mode.&#013;&#010;&#013;&#010;To get a proper shift Ongoing/Offgoing pressure and TQ correction have to be aligned.</description>
     <CATEGORYMEM index="0" category="7" />
     <XDFAXIS id="x" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x58290" mmedelementsizebits="16" mmedcolcount="8" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x58290" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>U/Min</units>
       <indexcount>8</indexcount>
       <decimalpl>0</decimalpl>
@@ -994,7 +1238,7 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x582A0" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x582A0" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>Nm</units>
       <indexcount>10</indexcount>
       <decimalpl>0</decimalpl>
@@ -1023,7 +1267,7 @@
     <title>HS 2-&gt;3</title>
     <CATEGORYMEM index="0" category="7" />
     <XDFAXIS id="x" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x583FC" mmedelementsizebits="16" mmedcolcount="8" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x583FC" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>U/Min</units>
       <indexcount>8</indexcount>
       <decimalpl>0</decimalpl>
@@ -1037,7 +1281,7 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x5840C" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x5840C" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>Nm</units>
       <indexcount>10</indexcount>
       <decimalpl>0</decimalpl>
@@ -1066,7 +1310,7 @@
     <title>HS 3-&gt;4</title>
     <CATEGORYMEM index="0" category="7" />
     <XDFAXIS id="x" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x5860C" mmedelementsizebits="16" mmedcolcount="8" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x5860C" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>U/Min</units>
       <indexcount>8</indexcount>
       <decimalpl>0</decimalpl>
@@ -1080,7 +1324,7 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x5861C" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x5861C" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>Nm</units>
       <indexcount>10</indexcount>
       <decimalpl>0</decimalpl>
@@ -1109,7 +1353,7 @@
     <title>HS 4-&gt;5</title>
     <CATEGORYMEM index="0" category="7" />
     <XDFAXIS id="x" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x5881C" mmedelementsizebits="16" mmedcolcount="8" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x5881C" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>U/Min</units>
       <indexcount>8</indexcount>
       <decimalpl>0</decimalpl>
@@ -1123,7 +1367,7 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x5882C" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x5882C" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>Nm</units>
       <indexcount>10</indexcount>
       <decimalpl>0</decimalpl>
@@ -1152,7 +1396,7 @@
     <title>HS 5-&gt;6</title>
     <CATEGORYMEM index="0" category="7" />
     <XDFAXIS id="x" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x58A2C" mmedelementsizebits="16" mmedcolcount="8" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x58A2C" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>U/Min</units>
       <indexcount>8</indexcount>
       <decimalpl>0</decimalpl>
@@ -1166,7 +1410,7 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x58A3C" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x58A3C" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>Nm</units>
       <indexcount>10</indexcount>
       <decimalpl>0</decimalpl>
@@ -1281,7 +1525,7 @@
     <title>N-&gt;4</title>
     <CATEGORYMEM index="0" category="5" />
     <XDFAXIS id="x" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x59390" mmedelementsizebits="16" mmedcolcount="8" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x59390" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>U/Min</units>
       <indexcount>8</indexcount>
       <decimalpl>0</decimalpl>
@@ -1295,7 +1539,7 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x593A0" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x593A0" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>Nm</units>
       <indexcount>10</indexcount>
       <decimalpl>0</decimalpl>
@@ -1324,7 +1568,7 @@
     <title>N-&gt;5</title>
     <CATEGORYMEM index="0" category="5" />
     <XDFAXIS id="x" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x59458" mmedelementsizebits="16" mmedcolcount="8" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x59458" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>U/Min</units>
       <indexcount>8</indexcount>
       <decimalpl>0</decimalpl>
@@ -1338,7 +1582,7 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x59468" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x59468" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>Nm</units>
       <indexcount>10</indexcount>
       <decimalpl>0</decimalpl>
@@ -1496,7 +1740,7 @@
     <title>Timespan Ongoing Clutch Transition HS 1-&gt;2</title>
     <CATEGORYMEM index="0" category="6" />
     <XDFAXIS id="x" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x5ADBE" mmedelementsizebits="8" mmedcolcount="4" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x5ADBE" mmedelementsizebits="8" mmedmajorstridebits="8" mmedminorstridebits="0" />
       <units>U/min</units>
       <indexcount>4</indexcount>
       <decimalpl>0</decimalpl>
@@ -1510,7 +1754,7 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x5ADBA" mmedelementsizebits="8" mmedcolcount="4" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x5ADBA" mmedelementsizebits="8" mmedmajorstridebits="8" mmedminorstridebits="0" />
       <units>Nm</units>
       <indexcount>4</indexcount>
       <decimalpl>0</decimalpl>
@@ -1539,7 +1783,7 @@
     <title>Timespan Ongoing Clutch Transition HS 2-&gt;3</title>
     <CATEGORYMEM index="0" category="6" />
     <XDFAXIS id="x" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x5ADDA" mmedelementsizebits="8" mmedcolcount="4" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x5ADDA" mmedelementsizebits="8" mmedmajorstridebits="8" mmedminorstridebits="0" />
       <units>U/min</units>
       <indexcount>4</indexcount>
       <decimalpl>0</decimalpl>
@@ -1553,8 +1797,8 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x5ADD6" mmedelementsizebits="8" mmedcolcount="4" mmedmajorstridebits="8" mmedminorstridebits="0" />
-      <units>Nm</units>
+      <EMBEDDEDDATA mmedaddress="0x5ADD6" mmedelementsizebits="8" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <units>km/h</units>
       <indexcount>4</indexcount>
       <decimalpl>0</decimalpl>
       <outputtype>2</outputtype>
@@ -1562,7 +1806,7 @@
       <datatype>0</datatype>
       <unittype>0</unittype>
       <DALINK index="0" />
-      <MATH equation="6.000000 * X+ -204.000000">
+      <MATH equation="0.042000 * X">
         <VAR id="X" />
       </MATH>
     </XDFAXIS>
@@ -1582,7 +1826,7 @@
     <title>Timespan Ongoing Clutch Transition HS 3-&gt;4</title>
     <CATEGORYMEM index="0" category="6" />
     <XDFAXIS id="x" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x5ADF6" mmedelementsizebits="8" mmedcolcount="4" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x5ADF6" mmedelementsizebits="8" mmedmajorstridebits="8" mmedminorstridebits="0" />
       <units>U/min</units>
       <indexcount>4</indexcount>
       <decimalpl>0</decimalpl>
@@ -1596,7 +1840,7 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x5ADF2" mmedelementsizebits="8" mmedcolcount="4" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x5ADF2" mmedelementsizebits="8" mmedmajorstridebits="8" mmedminorstridebits="0" />
       <units>Nm</units>
       <indexcount>4</indexcount>
       <decimalpl>0</decimalpl>
@@ -1625,7 +1869,7 @@
     <title>Timespan Ongoing Clutch Transition HS 4-&gt;5</title>
     <CATEGORYMEM index="0" category="6" />
     <XDFAXIS id="x" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x5AE12" mmedelementsizebits="8" mmedcolcount="4" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x5AE12" mmedelementsizebits="8" mmedmajorstridebits="8" mmedminorstridebits="0" />
       <units>U/min</units>
       <indexcount>4</indexcount>
       <decimalpl>0</decimalpl>
@@ -1639,7 +1883,7 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x5AE0E" mmedelementsizebits="8" mmedcolcount="4" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x5AE0E" mmedelementsizebits="8" mmedmajorstridebits="8" mmedminorstridebits="0" />
       <units>Nm</units>
       <indexcount>4</indexcount>
       <decimalpl>0</decimalpl>
@@ -1754,7 +1998,7 @@
     <title>Timespan Ongoing Clutch Transition HS 2-&gt;3</title>
     <CATEGORYMEM index="0" category="8" />
     <XDFAXIS id="x" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x5AE66" mmedelementsizebits="8" mmedcolcount="4" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x5AE66" mmedelementsizebits="8" mmedmajorstridebits="8" mmedminorstridebits="0" />
       <units>U/min</units>
       <indexcount>4</indexcount>
       <decimalpl>0</decimalpl>
@@ -1768,7 +2012,7 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x5AE62" mmedelementsizebits="8" mmedcolcount="4" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x5AE62" mmedelementsizebits="8" mmedmajorstridebits="8" mmedminorstridebits="0" />
       <units>Nm</units>
       <indexcount>4</indexcount>
       <decimalpl>0</decimalpl>
@@ -1869,12 +2113,12 @@
     </XDFAXIS>
     <XDFAXIS id="z">
       <EMBEDDEDDATA mmedaddress="0x5AEA2" mmedelementsizebits="8" mmedrowcount="4" mmedcolcount="4" mmedmajorstridebits="0" mmedminorstridebits="0" />
-      <units>ms</units>
+      <units>-</units>
       <decimalpl>0</decimalpl>
       <min>0.000000</min>
-      <max>2550.000000</max>
+      <max>255.000000</max>
       <outputtype>2</outputtype>
-      <MATH equation="10.000000 * X">
+      <MATH equation="X">
         <VAR id="X" />
       </MATH>
     </XDFAXIS>
@@ -1926,7 +2170,7 @@
     <title>Timespan Ongoing Clutch Transition HS 1-&gt;2</title>
     <CATEGORYMEM index="0" category="7" />
     <XDFAXIS id="x" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x5AED6" mmedelementsizebits="8" mmedcolcount="4" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x5AED6" mmedelementsizebits="8" mmedmajorstridebits="8" mmedminorstridebits="0" />
       <units>U/min</units>
       <indexcount>4</indexcount>
       <decimalpl>0</decimalpl>
@@ -1940,7 +2184,7 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x5AED2" mmedelementsizebits="8" mmedcolcount="4" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x5AED2" mmedelementsizebits="8" mmedmajorstridebits="8" mmedminorstridebits="0" />
       <units>Nm</units>
       <indexcount>4</indexcount>
       <decimalpl>0</decimalpl>
@@ -1969,7 +2213,7 @@
     <title>Timespan Ongoing Clutch Transition HS 2-&gt;3</title>
     <CATEGORYMEM index="0" category="7" />
     <XDFAXIS id="x" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x5AEF2" mmedelementsizebits="8" mmedcolcount="4" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x5AEF2" mmedelementsizebits="8" mmedmajorstridebits="8" mmedminorstridebits="0" />
       <units>U/min</units>
       <indexcount>4</indexcount>
       <decimalpl>0</decimalpl>
@@ -1983,7 +2227,7 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x5AEEE" mmedelementsizebits="8" mmedcolcount="4" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x5AEEE" mmedelementsizebits="8" mmedmajorstridebits="8" mmedminorstridebits="0" />
       <units>Nm</units>
       <indexcount>4</indexcount>
       <decimalpl>0</decimalpl>
@@ -2012,7 +2256,7 @@
     <title>Timespan Ongoing Clutch Transition HS 3-&gt;4</title>
     <CATEGORYMEM index="0" category="7" />
     <XDFAXIS id="x" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x5AF0E" mmedelementsizebits="8" mmedcolcount="4" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x5AF0E" mmedelementsizebits="8" mmedmajorstridebits="8" mmedminorstridebits="0" />
       <units>U/min</units>
       <indexcount>4</indexcount>
       <decimalpl>0</decimalpl>
@@ -2026,7 +2270,7 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x5AF0A" mmedelementsizebits="8" mmedcolcount="4" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x5AF0A" mmedelementsizebits="8" mmedmajorstridebits="8" mmedminorstridebits="0" />
       <units>Nm</units>
       <indexcount>4</indexcount>
       <decimalpl>0</decimalpl>
@@ -2055,7 +2299,7 @@
     <title>Timespan Ongoing Clutch Transition HS 4-&gt;5</title>
     <CATEGORYMEM index="0" category="7" />
     <XDFAXIS id="x" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x5AF2A" mmedelementsizebits="8" mmedcolcount="4" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x5AF2A" mmedelementsizebits="8" mmedmajorstridebits="8" mmedminorstridebits="0" />
       <units>U/min</units>
       <indexcount>4</indexcount>
       <decimalpl>0</decimalpl>
@@ -2069,7 +2313,7 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x5AF26" mmedelementsizebits="8" mmedcolcount="4" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x5AF26" mmedelementsizebits="8" mmedmajorstridebits="8" mmedminorstridebits="0" />
       <units>Nm</units>
       <indexcount>4</indexcount>
       <decimalpl>0</decimalpl>
@@ -2098,7 +2342,7 @@
     <title>Timespan Ongoing Clutch Transition HS 5-&gt;6</title>
     <CATEGORYMEM index="0" category="7" />
     <XDFAXIS id="x" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x5AF46" mmedelementsizebits="8" mmedcolcount="4" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x5AF46" mmedelementsizebits="8" mmedmajorstridebits="8" mmedminorstridebits="0" />
       <units>U/min</units>
       <indexcount>4</indexcount>
       <decimalpl>0</decimalpl>
@@ -2112,7 +2356,7 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x5AF42" mmedelementsizebits="8" mmedcolcount="4" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x5AF42" mmedelementsizebits="8" mmedmajorstridebits="8" mmedminorstridebits="0" />
       <units>Nm</units>
       <indexcount>4</indexcount>
       <decimalpl>0</decimalpl>
@@ -2142,7 +2386,7 @@
     <description>TQ Management Maps come into play during shift transtions and are an additional correction factor to the calculated TQ reduction from the TCU. So a value of 1.0 means &quot;no correction&quot; while 0.5 means that the calculated value get&apos;s cut by half.&#013;&#010;&#013;&#010;In general, a lower correction value means faster engine deccel during upshifts.</description>
     <CATEGORYMEM index="0" category="11" />
     <XDFAXIS id="x" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x5DBCA" mmedelementsizebits="8" mmedcolcount="6" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x5DBCA" mmedelementsizebits="8" mmedmajorstridebits="8" mmedminorstridebits="0" />
       <units>U/min</units>
       <indexcount>6</indexcount>
       <decimalpl>0</decimalpl>
@@ -2156,7 +2400,7 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x5DBD0" mmedelementsizebits="8" mmedcolcount="10" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x5DBD0" mmedelementsizebits="8" mmedmajorstridebits="8" mmedminorstridebits="0" />
       <units>Nm</units>
       <indexcount>10</indexcount>
       <decimalpl>0</decimalpl>
@@ -2401,7 +2645,7 @@
     <title>HS 2-&gt;3</title>
     <CATEGORYMEM index="0" category="13" />
     <XDFAXIS id="x" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x5DF8A" mmedelementsizebits="8" mmedcolcount="6" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x5DF8A" mmedelementsizebits="8" mmedmajorstridebits="8" mmedminorstridebits="0" />
       <units>U/Min</units>
       <indexcount>6</indexcount>
       <decimalpl>0</decimalpl>
@@ -2415,7 +2659,7 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x5DF90" mmedelementsizebits="8" mmedcolcount="10" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x5DF90" mmedelementsizebits="8" mmedmajorstridebits="8" mmedminorstridebits="0" />
       <units>Nm</units>
       <indexcount>10</indexcount>
       <decimalpl>0</decimalpl>
@@ -2444,7 +2688,7 @@
     <title>HS 3-&gt;4</title>
     <CATEGORYMEM index="0" category="13" />
     <XDFAXIS id="x" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x5E07A" mmedelementsizebits="8" mmedcolcount="6" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x5E07A" mmedelementsizebits="8" mmedmajorstridebits="8" mmedminorstridebits="0" />
       <units>U/Min</units>
       <indexcount>6</indexcount>
       <decimalpl>0</decimalpl>
@@ -2458,7 +2702,7 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x5E080" mmedelementsizebits="8" mmedcolcount="10" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x5E080" mmedelementsizebits="8" mmedmajorstridebits="8" mmedminorstridebits="0" />
       <units>Nm</units>
       <indexcount>10</indexcount>
       <decimalpl>0</decimalpl>
@@ -2574,7 +2818,7 @@
     <description>TQ Management Maps come into play during shift transtions and are an additional correction factor to the calculated TQ reduction from the TCU. So a value of 1.0 means &quot;no correction&quot; while 0.5 means that the calculated value get&apos;s cut by half.&#013;&#010;&#013;&#010;In general, a lower correction value means faster engine deccel during upshifts.</description>
     <CATEGORYMEM index="0" category="12" />
     <XDFAXIS id="x" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x5E34A" mmedelementsizebits="8" mmedcolcount="6" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x5E34A" mmedelementsizebits="8" mmedmajorstridebits="8" mmedminorstridebits="0" />
       <units>U/min</units>
       <indexcount>6</indexcount>
       <decimalpl>0</decimalpl>
@@ -2588,7 +2832,7 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x5E350" mmedelementsizebits="8" mmedcolcount="10" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x5E350" mmedelementsizebits="8" mmedmajorstridebits="8" mmedminorstridebits="0" />
       <units>Nm</units>
       <indexcount>10</indexcount>
       <decimalpl>0</decimalpl>
@@ -2660,7 +2904,7 @@
     <title>HS 3-&gt;4</title>
     <CATEGORYMEM index="0" category="12" />
     <XDFAXIS id="x" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x5E4DA" mmedelementsizebits="8" mmedcolcount="6" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x5E4DA" mmedelementsizebits="8" mmedmajorstridebits="8" mmedminorstridebits="0" />
       <units>U/min</units>
       <indexcount>6</indexcount>
       <decimalpl>0</decimalpl>
@@ -2674,7 +2918,7 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x5E4E0" mmedelementsizebits="8" mmedcolcount="10" mmedmajorstridebits="8" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x5E4E0" mmedelementsizebits="8" mmedmajorstridebits="8" mmedminorstridebits="0" />
       <units>Nm</units>
       <indexcount>10</indexcount>
       <decimalpl>0</decimalpl>
@@ -2834,7 +3078,7 @@
     <title>Engine Torque Curve</title>
     <CATEGORYMEM index="0" category="4" />
     <XDFAXIS id="x" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x6DFD0" mmedelementsizebits="16" mmedcolcount="13" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x6DFD0" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>U/min</units>
       <indexcount>13</indexcount>
       <decimalpl>0</decimalpl>
@@ -2960,13 +3204,673 @@
       <VAR id="X" />
     </MATH>
   </XDFCONSTANT>
+  <XDFTABLE uniqueid="0x6848" flags="0x0">
+    <title>HS 1-&gt;2 Torque (Nm)</title>
+    <CATEGORYMEM index="0" category="6" />
+    <CATEGORYMEM index="1" category="21" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedelementsizebits="8" mmedmajorstridebits="-32" mmedminorstridebits="0" />
+      <units>Nm</units>
+      <indexcount>1</indexcount>
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="0.00" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedaddress="0x571D8" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <units>Nm</units>
+      <indexcount>10</indexcount>
+      <outputtype>2</outputtype>
+      <embedinfo type="1" />
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <MATH equation="X*6-204">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedaddress="0x571D8" mmedelementsizebits="16" mmedrowcount="10" mmedmajorstridebits="0" mmedminorstridebits="0" />
+      <units>Nm</units>
+      <decimalpl>2</decimalpl>
+      <min>0.000000</min>
+      <max>255.000000</max>
+      <outputtype>2</outputtype>
+      <MATH equation="X*6-204">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFTABLE uniqueid="0x725" flags="0x0">
+    <title>HS 2-&gt;3 Torque (Nm)</title>
+    <CATEGORYMEM index="0" category="6" />
+    <CATEGORYMEM index="1" category="21" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedelementsizebits="8" mmedmajorstridebits="-32" mmedminorstridebits="0" />
+      <units>Nm</units>
+      <indexcount>1</indexcount>
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="0.00" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedaddress="0x57344" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <units>Nm</units>
+      <indexcount>10</indexcount>
+      <outputtype>2</outputtype>
+      <embedinfo type="1" />
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <MATH equation="X*6-204">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedaddress="0x57344" mmedelementsizebits="16" mmedrowcount="10" mmedmajorstridebits="0" mmedminorstridebits="0" />
+      <units>Nm</units>
+      <decimalpl>2</decimalpl>
+      <min>0.000000</min>
+      <max>255.000000</max>
+      <outputtype>2</outputtype>
+      <MATH equation="X*6-204">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFTABLE uniqueid="0x13A8" flags="0x0">
+    <title>HS 3-&gt;4 Torque (Nm)</title>
+    <CATEGORYMEM index="0" category="6" />
+    <CATEGORYMEM index="1" category="21" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedelementsizebits="8" mmedmajorstridebits="-32" mmedminorstridebits="0" />
+      <units>Nm</units>
+      <indexcount>1</indexcount>
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="0.00" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedaddress="0x574B0" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <units>Nm</units>
+      <indexcount>10</indexcount>
+      <outputtype>2</outputtype>
+      <embedinfo type="1" />
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <MATH equation="X*6-204">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedaddress="0x574B0" mmedelementsizebits="16" mmedrowcount="10" mmedmajorstridebits="0" mmedminorstridebits="0" />
+      <units>Nm</units>
+      <decimalpl>2</decimalpl>
+      <min>0.000000</min>
+      <max>255.000000</max>
+      <outputtype>2</outputtype>
+      <MATH equation="X*6-204">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFTABLE uniqueid="0x975" flags="0x0">
+    <title>HS 4-&gt;5 Torque (Nm)</title>
+    <CATEGORYMEM index="0" category="6" />
+    <CATEGORYMEM index="1" category="21" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedelementsizebits="8" mmedmajorstridebits="-32" mmedminorstridebits="0" />
+      <units>Nm</units>
+      <indexcount>1</indexcount>
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="0.00" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedaddress="0x5761C" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>10</indexcount>
+      <outputtype>2</outputtype>
+      <embedinfo type="1" />
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <MATH equation="X*6-204">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedaddress="0x5761C" mmedelementsizebits="16" mmedrowcount="10" mmedmajorstridebits="0" mmedminorstridebits="0" />
+      <units>Nm</units>
+      <decimalpl>2</decimalpl>
+      <min>0.000000</min>
+      <max>255.000000</max>
+      <outputtype>2</outputtype>
+      <MATH equation="X*6-204">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFTABLE uniqueid="0x6FB3" flags="0x0">
+    <title>HS 5-&gt;6 Torque (Nm)</title>
+    <CATEGORYMEM index="0" category="6" />
+    <CATEGORYMEM index="1" category="21" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedelementsizebits="8" mmedmajorstridebits="-32" mmedminorstridebits="0" />
+      <units>Nm</units>
+      <indexcount>1</indexcount>
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="0.00" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedaddress="0x57788" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <units>Nm</units>
+      <indexcount>10</indexcount>
+      <outputtype>2</outputtype>
+      <embedinfo type="1" />
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <MATH equation="X*6-204">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedaddress="0x57788" mmedelementsizebits="16" mmedrowcount="10" mmedmajorstridebits="0" mmedminorstridebits="0" />
+      <units>Nm</units>
+      <decimalpl>2</decimalpl>
+      <min>0.000000</min>
+      <max>255.000000</max>
+      <outputtype>2</outputtype>
+      <MATH equation="X*6-204">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFTABLE uniqueid="0x1460" flags="0x0">
+    <title>HS 1-&gt;2 Torque (Nm)</title>
+    <CATEGORYMEM index="0" category="7" />
+    <CATEGORYMEM index="1" category="22" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedelementsizebits="8" mmedmajorstridebits="-32" mmedminorstridebits="0" />
+      <units>Nm</units>
+      <indexcount>1</indexcount>
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="0.00" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedaddress="0x582A0" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <units>Nm</units>
+      <indexcount>10</indexcount>
+      <outputtype>2</outputtype>
+      <embedinfo type="1" />
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <MATH equation="X*6-204">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedaddress="0x582A0" mmedelementsizebits="16" mmedrowcount="10" mmedmajorstridebits="0" mmedminorstridebits="0" />
+      <units>Nm</units>
+      <decimalpl>2</decimalpl>
+      <min>0.000000</min>
+      <max>255.000000</max>
+      <outputtype>2</outputtype>
+      <MATH equation="X*6-204">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFTABLE uniqueid="0x71A9" flags="0x0">
+    <title>HS 2-&gt;3 Torque (Nm)</title>
+    <CATEGORYMEM index="0" category="7" />
+    <CATEGORYMEM index="1" category="22" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedelementsizebits="8" mmedmajorstridebits="-32" mmedminorstridebits="0" />
+      <units>Nm</units>
+      <indexcount>1</indexcount>
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="0.00" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedaddress="0x5840C" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <units>Nm</units>
+      <indexcount>10</indexcount>
+      <outputtype>2</outputtype>
+      <embedinfo type="1" />
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <MATH equation="X*6-204">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedaddress="0x5840C" mmedelementsizebits="16" mmedrowcount="10" mmedmajorstridebits="0" mmedminorstridebits="0" />
+      <units>Nm</units>
+      <decimalpl>2</decimalpl>
+      <min>0.000000</min>
+      <max>255.000000</max>
+      <outputtype>2</outputtype>
+      <MATH equation="X*6-204">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFTABLE uniqueid="0x274A" flags="0x0">
+    <title>Torque Limit Per Gear</title>
+    <CATEGORYMEM index="0" category="4" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedelementsizebits="8" mmedmajorstridebits="-32" mmedminorstridebits="0" />
+      <units>Gear</units>
+      <indexcount>8</indexcount>
+      <outputtype>4</outputtype>
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="0" />
+      <LABEL index="1" value="1" />
+      <LABEL index="2" value="2" />
+      <LABEL index="3" value="3" />
+      <LABEL index="4" value="4" />
+      <LABEL index="5" value="5" />
+      <LABEL index="6" value="6" />
+      <LABEL index="7" value="7" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedelementsizebits="8" mmedmajorstridebits="-32" mmedminorstridebits="0" />
+      <units>Nm</units>
+      <indexcount>1</indexcount>
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="0.00" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedaddress="0x53DA8" mmedelementsizebits="16" mmedrowcount="1" mmedcolcount="8" mmedmajorstridebits="0" mmedminorstridebits="0" />
+      <units>Nm</units>
+      <decimalpl>1</decimalpl>
+      <min>0.000000</min>
+      <max>255.000000</max>
+      <outputtype>2</outputtype>
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFTABLE uniqueid="0x4A5B" flags="0x0">
+    <title>HS 3-&gt;4 Torque (Nm)</title>
+    <CATEGORYMEM index="0" category="7" />
+    <CATEGORYMEM index="1" category="22" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedelementsizebits="8" mmedmajorstridebits="-32" mmedminorstridebits="0" />
+      <units>Nm</units>
+      <indexcount>1</indexcount>
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="0.00" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedaddress="0x5861C" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <units>Nm</units>
+      <indexcount>10</indexcount>
+      <outputtype>2</outputtype>
+      <embedinfo type="1" />
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <MATH equation="X*6-204">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedaddress="0x5861C" mmedelementsizebits="16" mmedrowcount="10" mmedmajorstridebits="0" mmedminorstridebits="0" />
+      <units>Nm</units>
+      <decimalpl>2</decimalpl>
+      <min>0.000000</min>
+      <max>255.000000</max>
+      <outputtype>2</outputtype>
+      <MATH equation="X*6-204">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFTABLE uniqueid="0x438A" flags="0x0">
+    <title>HS 4-&gt;5 Torque (Nm)</title>
+    <CATEGORYMEM index="0" category="7" />
+    <CATEGORYMEM index="1" category="22" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedelementsizebits="8" mmedmajorstridebits="-32" mmedminorstridebits="0" />
+      <units>Nm</units>
+      <indexcount>1</indexcount>
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="0.00" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedaddress="0x5882C" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <units>Nm</units>
+      <indexcount>10</indexcount>
+      <outputtype>2</outputtype>
+      <embedinfo type="1" />
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <MATH equation="X*6-204">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedaddress="0x5882C" mmedelementsizebits="16" mmedrowcount="10" mmedmajorstridebits="0" mmedminorstridebits="0" />
+      <units>Nm</units>
+      <decimalpl>2</decimalpl>
+      <min>0.000000</min>
+      <max>255.000000</max>
+      <outputtype>2</outputtype>
+      <MATH equation="X*6-204">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFTABLE uniqueid="0x31C0" flags="0x0">
+    <title>HS 5-&gt;6 Torque (Nm)</title>
+    <CATEGORYMEM index="0" category="7" />
+    <CATEGORYMEM index="1" category="22" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedelementsizebits="8" mmedmajorstridebits="-32" mmedminorstridebits="0" />
+      <units>Nm</units>
+      <indexcount>1</indexcount>
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="0.00" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedaddress="0x58A3C" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <units>Nm</units>
+      <indexcount>10</indexcount>
+      <outputtype>2</outputtype>
+      <embedinfo type="1" />
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <MATH equation="X*6-204">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedaddress="0x58A3C" mmedelementsizebits="16" mmedrowcount="10" mmedmajorstridebits="0" mmedminorstridebits="0" />
+      <units>Nm</units>
+      <decimalpl>2</decimalpl>
+      <min>0.000000</min>
+      <max>255.000000</max>
+      <outputtype>2</outputtype>
+      <MATH equation="X*6-204">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFTABLE uniqueid="0x3AB1" flags="0x0">
+    <title>HS 1-&gt;2 Torque (Nm)</title>
+    <CATEGORYMEM index="0" category="8" />
+    <CATEGORYMEM index="1" category="23" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedelementsizebits="8" mmedmajorstridebits="-32" mmedminorstridebits="0" />
+      <units>Nm</units>
+      <indexcount>1</indexcount>
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="0.00" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedaddress="0x578F4" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <units>Nm</units>
+      <indexcount>10</indexcount>
+      <outputtype>2</outputtype>
+      <embedinfo type="1" />
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <MATH equation="X*6-204">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedaddress="0x578F4" mmedelementsizebits="16" mmedrowcount="10" mmedmajorstridebits="0" mmedminorstridebits="0" />
+      <units>Nm</units>
+      <decimalpl>2</decimalpl>
+      <min>0.000000</min>
+      <max>255.000000</max>
+      <outputtype>2</outputtype>
+      <MATH equation="X*6-204">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFTABLE uniqueid="0x25EC" flags="0x0">
+    <title>HS 2-&gt;3 Torque (Nm)</title>
+    <CATEGORYMEM index="0" category="8" />
+    <CATEGORYMEM index="1" category="23" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedelementsizebits="8" mmedmajorstridebits="-32" mmedminorstridebits="0" />
+      <units>Nm</units>
+      <indexcount>1</indexcount>
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="0.00" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedaddress="0x57A60" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <indexcount>10</indexcount>
+      <outputtype>2</outputtype>
+      <embedinfo type="1" />
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <MATH equation="X*6-204">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedaddress="0x57A60" mmedelementsizebits="16" mmedrowcount="10" mmedmajorstridebits="0" mmedminorstridebits="0" />
+      <units>Nm</units>
+      <decimalpl>2</decimalpl>
+      <min>0.000000</min>
+      <max>255.000000</max>
+      <outputtype>2</outputtype>
+      <MATH equation="X*6-204">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFTABLE uniqueid="0x7210" flags="0x0">
+    <title>HS 3-&gt;4 Torque (Nm)</title>
+    <CATEGORYMEM index="0" category="8" />
+    <CATEGORYMEM index="1" category="23" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedelementsizebits="8" mmedmajorstridebits="-32" mmedminorstridebits="0" />
+      <units>Nm</units>
+      <indexcount>1</indexcount>
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="0.00" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedaddress="0x57C70" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <units>Nm</units>
+      <indexcount>10</indexcount>
+      <outputtype>2</outputtype>
+      <embedinfo type="1" />
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <MATH equation="X*6-204">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedaddress="0x57C70" mmedelementsizebits="16" mmedrowcount="10" mmedmajorstridebits="0" mmedminorstridebits="0" />
+      <units>Nm</units>
+      <decimalpl>2</decimalpl>
+      <min>0.000000</min>
+      <max>255.000000</max>
+      <outputtype>2</outputtype>
+      <MATH equation="X*6-204">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFTABLE uniqueid="0x63AB" flags="0x0">
+    <title>HS 4-&gt;5 Torque (Nm)</title>
+    <CATEGORYMEM index="0" category="8" />
+    <CATEGORYMEM index="1" category="23" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedelementsizebits="8" mmedmajorstridebits="-32" mmedminorstridebits="0" />
+      <units>Nm</units>
+      <indexcount>1</indexcount>
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="0.00" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedaddress="0x57E80" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <units>Nm</units>
+      <indexcount>10</indexcount>
+      <outputtype>2</outputtype>
+      <embedinfo type="1" />
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <MATH equation="X*6-204">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedaddress="0x57E80" mmedelementsizebits="16" mmedrowcount="10" mmedmajorstridebits="0" mmedminorstridebits="0" />
+      <units>Nm</units>
+      <decimalpl>2</decimalpl>
+      <min>0.000000</min>
+      <max>255.000000</max>
+      <outputtype>2</outputtype>
+      <MATH equation="X*6-204">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
+  <XDFTABLE uniqueid="0x418A" flags="0x0">
+    <title>HS 5-&gt;6 Torque (Nm)</title>
+    <CATEGORYMEM index="0" category="8" />
+    <CATEGORYMEM index="1" category="23" />
+    <XDFAXIS id="x" uniqueid="0x0">
+      <EMBEDDEDDATA mmedtypeflags="0x02" mmedelementsizebits="8" mmedmajorstridebits="-32" mmedminorstridebits="0" />
+      <units>Nm</units>
+      <indexcount>1</indexcount>
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <LABEL index="0" value="0.00" />
+      <MATH equation="X">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="y" uniqueid="0x0">
+      <EMBEDDEDDATA mmedaddress="0x58090" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <units>Nm</units>
+      <indexcount>10</indexcount>
+      <outputtype>2</outputtype>
+      <embedinfo type="1" />
+      <datatype>0</datatype>
+      <unittype>0</unittype>
+      <DALINK index="0" />
+      <MATH equation="X*6-204">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+    <XDFAXIS id="z">
+      <EMBEDDEDDATA mmedaddress="0x58090" mmedelementsizebits="16" mmedrowcount="10" mmedmajorstridebits="0" mmedminorstridebits="0" />
+      <units>Nm</units>
+      <decimalpl>2</decimalpl>
+      <min>0.000000</min>
+      <max>255.000000</max>
+      <outputtype>2</outputtype>
+      <MATH equation="X*6-204">
+        <VAR id="X" />
+      </MATH>
+    </XDFAXIS>
+  </XDFTABLE>
   <XDFTABLE uniqueid="0x0" flags="0x0">
     <title>Uphill A1</title>
     <description>Uphill maps are used when the DSC senses the vehicle going uphill. The steeper the incline, the higher the A* map used. Usually only A1 and A2 are used on normal roads.&#013;&#010;&#013;&#010;Shiftmaps signal the TCU, when to shift under a specific OSS/load situation. The infield values are OSS (=Output Speed Shaft) RPM. Factor in your Tire Size and rear diff ratio and you are able to transform the OSS values to vehicle speed.&#013;&#010;&#013;&#010;The x-Axis is throttle Input. The Y-Axis represents Gears 1 - 6, with the corresponding upshift/downshift OSS values. &#013;&#010;&#013;&#010;Row 1: 1-&gt;2 Upshift&#013;&#010;Row 2: 2-&gt;1 Downshift&#013;&#010;Row 3: 2-&gt;3 Upshift&#013;&#010;etc.</description>
     <CATEGORYMEM index="0" category="9" />
     <XDFAXIS id="x" uniqueid="0x0">
       <EMBEDDEDDATA mmedelementsizebits="16" mmedmajorstridebits="-32" mmedminorstridebits="0" />
-      <units>Gear</units>
+      <units>-</units>
       <indexcount>10</indexcount>
       <decimalpl>0</decimalpl>
       <outputtype>4</outputtype>
@@ -3039,7 +3943,7 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x6ED30" mmedelementsizebits="16" mmedcolcount="13" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x6ED30" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>%</units>
       <indexcount>13</indexcount>
       <decimalpl>0</decimalpl>
@@ -3091,7 +3995,7 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x6ED4C" mmedelementsizebits="16" mmedcolcount="13" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x6ED4C" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>%</units>
       <indexcount>13</indexcount>
       <decimalpl>0</decimalpl>
@@ -3195,7 +4099,7 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x6EE48" mmedelementsizebits="16" mmedcolcount="13" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x6EE48" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>%</units>
       <indexcount>13</indexcount>
       <decimalpl>0</decimalpl>
@@ -3248,7 +4152,7 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x6EF44" mmedelementsizebits="16" mmedcolcount="13" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x6EF44" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>%</units>
       <indexcount>13</indexcount>
       <decimalpl>0</decimalpl>
@@ -3301,7 +4205,7 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x6EE48" mmedelementsizebits="16" mmedcolcount="13" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x6EE48" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>%</units>
       <indexcount>13</indexcount>
       <decimalpl>0</decimalpl>
@@ -3353,7 +4257,7 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x6EE48" mmedelementsizebits="16" mmedcolcount="13" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x6EE48" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>%</units>
       <indexcount>13</indexcount>
       <decimalpl>0</decimalpl>
@@ -3406,7 +4310,7 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x6EF44" mmedelementsizebits="16" mmedcolcount="13" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x6EF44" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>%</units>
       <indexcount>13</indexcount>
       <decimalpl>0</decimalpl>
@@ -3459,7 +4363,7 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x6EF44" mmedelementsizebits="16" mmedcolcount="13" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x6EF44" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>%</units>
       <indexcount>13</indexcount>
       <decimalpl>0</decimalpl>
@@ -3511,7 +4415,7 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x6EE48" mmedelementsizebits="16" mmedcolcount="13" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x6EE48" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>%</units>
       <indexcount>13</indexcount>
       <decimalpl>0</decimalpl>
@@ -3564,7 +4468,7 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x6EE48" mmedelementsizebits="16" mmedcolcount="13" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x6EE48" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>%</units>
       <indexcount>13</indexcount>
       <decimalpl>0</decimalpl>
@@ -3617,7 +4521,7 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x6EE48" mmedelementsizebits="16" mmedcolcount="13" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x6EE48" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>%</units>
       <indexcount>13</indexcount>
       <decimalpl>0</decimalpl>
@@ -3669,7 +4573,7 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x6EE48" mmedelementsizebits="16" mmedcolcount="13" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x6EE48" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>%</units>
       <indexcount>13</indexcount>
       <decimalpl>0</decimalpl>
@@ -3722,7 +4626,7 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x6EE48" mmedelementsizebits="16" mmedcolcount="13" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x6EE48" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>%</units>
       <indexcount>13</indexcount>
       <decimalpl>0</decimalpl>
@@ -3775,7 +4679,7 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x6EF44" mmedelementsizebits="16" mmedcolcount="13" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x6EF44" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>%</units>
       <indexcount>13</indexcount>
       <decimalpl>0</decimalpl>
@@ -3828,7 +4732,7 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x6EE48" mmedelementsizebits="16" mmedcolcount="13" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x6EE48" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>%</units>
       <indexcount>13</indexcount>
       <decimalpl>0</decimalpl>
@@ -3881,7 +4785,7 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x6EE48" mmedelementsizebits="16" mmedcolcount="13" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x6EE48" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>%</units>
       <indexcount>13</indexcount>
       <decimalpl>0</decimalpl>
@@ -3934,7 +4838,7 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x6EE48" mmedelementsizebits="16" mmedcolcount="13" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x6EE48" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>%</units>
       <indexcount>13</indexcount>
       <decimalpl>0</decimalpl>
@@ -3987,7 +4891,7 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x6EE48" mmedelementsizebits="16" mmedcolcount="13" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x6EE48" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>%</units>
       <indexcount>13</indexcount>
       <decimalpl>0</decimalpl>
@@ -4146,7 +5050,7 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x70FEA" mmedelementsizebits="16" mmedcolcount="9" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x70FEA" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>%</units>
       <indexcount>9</indexcount>
       <decimalpl>0</decimalpl>
@@ -4240,7 +5144,7 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x70FFE" mmedelementsizebits="16" mmedcolcount="9" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x70FFE" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>%</units>
       <indexcount>9</indexcount>
       <decimalpl>0</decimalpl>
@@ -4287,7 +5191,7 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x71076" mmedelementsizebits="16" mmedcolcount="9" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x71076" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>%</units>
       <indexcount>9</indexcount>
       <decimalpl>0</decimalpl>
@@ -4334,7 +5238,7 @@
       </MATH>
     </XDFAXIS>
     <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x7108A" mmedelementsizebits="16" mmedcolcount="9" mmedmajorstridebits="16" mmedminorstridebits="0" />
+      <EMBEDDEDDATA mmedaddress="0x7108A" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
       <units>%</units>
       <indexcount>9</indexcount>
       <decimalpl>0</decimalpl>
@@ -4636,863 +5540,6 @@
       <max>65535.000000</max>
       <outputtype>2</outputtype>
       <MATH equation="X">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-  </XDFTABLE>
-  <XDFTABLE uniqueid="0x5EE7" flags="0x0">
-    <title>HS 1-&gt;2 Torque (Nm)</title>
-    <CATEGORYMEM index="0" category="1" />
-    <CATEGORYMEM index="1" category="20" />
-    <XDFAXIS id="x" uniqueid="0x0">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedelementsizebits="8" mmedmajorstridebits="-32" mmedminorstridebits="0" />
-      <units>Nm</units>
-      <indexcount>1</indexcount>
-      <datatype>0</datatype>
-      <unittype>0</unittype>
-      <DALINK index="0" />
-      <LABEL index="0" value="0.00" />
-      <MATH equation="X">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-    <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x54488" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <units>Nm</units>
-      <indexcount>10</indexcount>
-      <outputtype>2</outputtype>
-      <embedinfo type="1" />
-      <datatype>0</datatype>
-      <unittype>0</unittype>
-      <DALINK index="0" />
-      <MATH equation="X*6-204">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-    <XDFAXIS id="z">
-      <EMBEDDEDDATA mmedaddress="0x54488" mmedelementsizebits="16" mmedrowcount="10" mmedmajorstridebits="0" mmedminorstridebits="0" />
-      <units>Nm</units>
-      <decimalpl>2</decimalpl>
-      <min>0.000000</min>
-      <max>255.000000</max>
-      <outputtype>2</outputtype>
-      <MATH equation="X*6-204">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-  </XDFTABLE>
-  <XDFTABLE uniqueid="0x44C2" flags="0x0">
-    <title>HS 2-&gt;3 Torque (Nm)</title>
-    <CATEGORYMEM index="0" category="1" />
-    <CATEGORYMEM index="1" category="20" />
-    <XDFAXIS id="x" uniqueid="0x0">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedelementsizebits="8" mmedmajorstridebits="-32" mmedminorstridebits="0" />
-      <units>Nm</units>
-      <indexcount>1</indexcount>
-      <datatype>0</datatype>
-      <unittype>0</unittype>
-      <DALINK index="0" />
-      <LABEL index="0" value="0.00" />
-      <MATH equation="X">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-    <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x54618" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <units>Nm</units>
-      <indexcount>10</indexcount>
-      <outputtype>2</outputtype>
-      <embedinfo type="1" />
-      <datatype>0</datatype>
-      <unittype>0</unittype>
-      <DALINK index="0" />
-      <MATH equation="X*6-204">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-    <XDFAXIS id="z">
-      <EMBEDDEDDATA mmedaddress="0x54618" mmedelementsizebits="16" mmedrowcount="10" mmedmajorstridebits="0" mmedminorstridebits="0" />
-      <units>Nm</units>
-      <decimalpl>2</decimalpl>
-      <min>0.000000</min>
-      <max>255.000000</max>
-      <outputtype>2</outputtype>
-      <MATH equation="X*6-204">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-  </XDFTABLE>
-  <XDFTABLE uniqueid="0x195A" flags="0x0">
-    <title>HS 3-&gt;4 Torque (Nm)</title>
-    <CATEGORYMEM index="0" category="1" />
-    <CATEGORYMEM index="1" category="20" />
-    <XDFAXIS id="x" uniqueid="0x0">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedelementsizebits="8" mmedmajorstridebits="-32" mmedminorstridebits="0" />
-      <units>Nm</units>
-      <indexcount>1</indexcount>
-      <datatype>0</datatype>
-      <unittype>0</unittype>
-      <DALINK index="0" />
-      <LABEL index="0" value="0.00" />
-      <MATH equation="X">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-    <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x547A8" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <units>Nm</units>
-      <indexcount>10</indexcount>
-      <outputtype>2</outputtype>
-      <embedinfo type="1" />
-      <datatype>0</datatype>
-      <unittype>0</unittype>
-      <DALINK index="0" />
-      <MATH equation="X*6-204">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-    <XDFAXIS id="z">
-      <EMBEDDEDDATA mmedaddress="0x547A8" mmedelementsizebits="16" mmedrowcount="10" mmedmajorstridebits="0" mmedminorstridebits="0" />
-      <units>Nm</units>
-      <decimalpl>2</decimalpl>
-      <min>0.000000</min>
-      <max>255.000000</max>
-      <outputtype>2</outputtype>
-      <MATH equation="X*6-204">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-  </XDFTABLE>
-  <XDFTABLE uniqueid="0x24C3" flags="0x0">
-    <title>HS 4-&gt;5 Torque (Nm)</title>
-    <CATEGORYMEM index="0" category="1" />
-    <CATEGORYMEM index="1" category="20" />
-    <XDFAXIS id="x" uniqueid="0x0">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedelementsizebits="8" mmedmajorstridebits="-32" mmedminorstridebits="0" />
-      <units>Nm</units>
-      <indexcount>1</indexcount>
-      <datatype>0</datatype>
-      <unittype>0</unittype>
-      <DALINK index="0" />
-      <LABEL index="0" value="0.00" />
-      <MATH equation="X">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-    <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x54938" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <units>Nm</units>
-      <indexcount>10</indexcount>
-      <outputtype>2</outputtype>
-      <embedinfo type="1" />
-      <datatype>0</datatype>
-      <unittype>0</unittype>
-      <DALINK index="0" />
-      <MATH equation="X*6-204">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-    <XDFAXIS id="z">
-      <EMBEDDEDDATA mmedaddress="0x54938" mmedelementsizebits="16" mmedrowcount="10" mmedmajorstridebits="0" mmedminorstridebits="0" />
-      <units>Nm</units>
-      <decimalpl>2</decimalpl>
-      <min>0.000000</min>
-      <max>255.000000</max>
-      <outputtype>2</outputtype>
-      <MATH equation="X*6-204">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-  </XDFTABLE>
-  <XDFTABLE uniqueid="0x533F" flags="0x0">
-    <title>HS 5-&gt;6 Torque (Nm)</title>
-    <CATEGORYMEM index="0" category="1" />
-    <CATEGORYMEM index="1" category="20" />
-    <XDFAXIS id="x" uniqueid="0x0">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedelementsizebits="8" mmedmajorstridebits="-32" mmedminorstridebits="0" />
-      <units>Nm</units>
-      <indexcount>1</indexcount>
-      <datatype>0</datatype>
-      <unittype>0</unittype>
-      <DALINK index="0" />
-      <LABEL index="0" value="0.00" />
-      <MATH equation="X">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-    <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x54AC8" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <units>Nm</units>
-      <indexcount>10</indexcount>
-      <outputtype>2</outputtype>
-      <embedinfo type="1" />
-      <datatype>0</datatype>
-      <unittype>0</unittype>
-      <DALINK index="0" />
-      <MATH equation="X*6-204">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-    <XDFAXIS id="z">
-      <EMBEDDEDDATA mmedaddress="0x54AC8" mmedelementsizebits="16" mmedrowcount="10" mmedmajorstridebits="0" mmedminorstridebits="0" />
-      <units>Nm</units>
-      <decimalpl>2</decimalpl>
-      <min>0.000000</min>
-      <max>255.000000</max>
-      <outputtype>2</outputtype>
-      <MATH equation="X*6-204">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-  </XDFTABLE>
-  <XDFTABLE uniqueid="0x7EEC" flags="0x0">
-    <title>HS 1-&gt;2 Torque (Nm)</title>
-    <CATEGORYMEM index="0" category="6" />
-    <CATEGORYMEM index="1" category="21" />
-    <XDFAXIS id="x" uniqueid="0x0">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedelementsizebits="8" mmedmajorstridebits="-32" mmedminorstridebits="0" />
-      <units>Nm</units>
-      <indexcount>1</indexcount>
-      <datatype>0</datatype>
-      <unittype>0</unittype>
-      <DALINK index="0" />
-      <LABEL index="0" value="0.00" />
-      <MATH equation="X">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-    <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x571D8" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <units>Nm</units>
-      <indexcount>10</indexcount>
-      <outputtype>2</outputtype>
-      <embedinfo type="1" />
-      <datatype>0</datatype>
-      <unittype>0</unittype>
-      <DALINK index="0" />
-      <MATH equation="X*6-204">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-    <XDFAXIS id="z">
-      <EMBEDDEDDATA mmedaddress="0x571D8" mmedelementsizebits="16" mmedrowcount="10" mmedmajorstridebits="0" mmedminorstridebits="0" />
-      <units>Nm</units>
-      <decimalpl>2</decimalpl>
-      <min>0.000000</min>
-      <max>255.000000</max>
-      <outputtype>2</outputtype>
-      <MATH equation="X*6-204">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-  </XDFTABLE>
-  <XDFTABLE uniqueid="0x4F9D" flags="0x0">
-    <title>HS 2-&gt;3 Torque (Nm)</title>
-    <CATEGORYMEM index="0" category="6" />
-    <CATEGORYMEM index="1" category="21" />
-    <XDFAXIS id="x" uniqueid="0x0">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedelementsizebits="8" mmedmajorstridebits="-32" mmedminorstridebits="0" />
-      <units>Nm</units>
-      <indexcount>1</indexcount>
-      <datatype>0</datatype>
-      <unittype>0</unittype>
-      <DALINK index="0" />
-      <LABEL index="0" value="0.00" />
-      <MATH equation="X">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-    <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x57344" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <units>Nm</units>
-      <indexcount>10</indexcount>
-      <outputtype>2</outputtype>
-      <embedinfo type="1" />
-      <datatype>0</datatype>
-      <unittype>0</unittype>
-      <DALINK index="0" />
-      <MATH equation="X*6-204">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-    <XDFAXIS id="z">
-      <EMBEDDEDDATA mmedaddress="0x57344" mmedelementsizebits="16" mmedrowcount="10" mmedmajorstridebits="0" mmedminorstridebits="0" />
-      <units>Nm</units>
-      <decimalpl>2</decimalpl>
-      <min>0.000000</min>
-      <max>255.000000</max>
-      <outputtype>2</outputtype>
-      <MATH equation="X*6-204">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-  </XDFTABLE>
-  <XDFTABLE uniqueid="0x5DE3" flags="0x0">
-    <title>HS 3-&gt;4 Torque (Nm)</title>
-    <CATEGORYMEM index="0" category="6" />
-    <CATEGORYMEM index="1" category="21" />
-    <XDFAXIS id="x" uniqueid="0x0">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedelementsizebits="8" mmedmajorstridebits="-32" mmedminorstridebits="0" />
-      <units>Nm</units>
-      <indexcount>1</indexcount>
-      <datatype>0</datatype>
-      <unittype>0</unittype>
-      <DALINK index="0" />
-      <LABEL index="0" value="0.00" />
-      <MATH equation="X">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-    <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x574B0" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <units>Nm</units>
-      <indexcount>10</indexcount>
-      <outputtype>2</outputtype>
-      <embedinfo type="1" />
-      <datatype>0</datatype>
-      <unittype>0</unittype>
-      <DALINK index="0" />
-      <MATH equation="X*6-204">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-    <XDFAXIS id="z">
-      <EMBEDDEDDATA mmedaddress="0x574B0" mmedelementsizebits="16" mmedrowcount="10" mmedmajorstridebits="0" mmedminorstridebits="0" />
-      <units>Nm</units>
-      <decimalpl>2</decimalpl>
-      <min>0.000000</min>
-      <max>255.000000</max>
-      <outputtype>2</outputtype>
-      <MATH equation="X*6-204">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-  </XDFTABLE>
-  <XDFTABLE uniqueid="0x5E11" flags="0x0">
-    <title>HS 4-&gt;5 Torque (Nm)</title>
-    <CATEGORYMEM index="0" category="6" />
-    <CATEGORYMEM index="1" category="21" />
-    <XDFAXIS id="x" uniqueid="0x0">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedelementsizebits="8" mmedmajorstridebits="-32" mmedminorstridebits="0" />
-      <units>Nm</units>
-      <indexcount>1</indexcount>
-      <datatype>0</datatype>
-      <unittype>0</unittype>
-      <DALINK index="0" />
-      <LABEL index="0" value="0.00" />
-      <MATH equation="X">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-    <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x5761C" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>10</indexcount>
-      <outputtype>2</outputtype>
-      <embedinfo type="1" />
-      <datatype>0</datatype>
-      <unittype>0</unittype>
-      <DALINK index="0" />
-      <MATH equation="X*6-204">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-    <XDFAXIS id="z">
-      <EMBEDDEDDATA mmedaddress="0x5761C" mmedelementsizebits="16" mmedrowcount="10" mmedmajorstridebits="0" mmedminorstridebits="0" />
-      <units>Nm</units>
-      <decimalpl>2</decimalpl>
-      <min>0.000000</min>
-      <max>255.000000</max>
-      <outputtype>2</outputtype>
-      <MATH equation="X*6-204">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-  </XDFTABLE>
-  <XDFTABLE uniqueid="0x7A48" flags="0x0">
-    <title>HS 5-&gt;6 Torque (Nm)</title>
-    <CATEGORYMEM index="0" category="6" />
-    <CATEGORYMEM index="1" category="21" />
-    <XDFAXIS id="x" uniqueid="0x0">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedelementsizebits="8" mmedmajorstridebits="-32" mmedminorstridebits="0" />
-      <units>Nm</units>
-      <indexcount>1</indexcount>
-      <datatype>0</datatype>
-      <unittype>0</unittype>
-      <DALINK index="0" />
-      <LABEL index="0" value="0.00" />
-      <MATH equation="X">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-    <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x57788" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <units>Nm</units>
-      <indexcount>10</indexcount>
-      <outputtype>2</outputtype>
-      <embedinfo type="1" />
-      <datatype>0</datatype>
-      <unittype>0</unittype>
-      <DALINK index="0" />
-      <MATH equation="X*6-204">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-    <XDFAXIS id="z">
-      <EMBEDDEDDATA mmedaddress="0x57788" mmedelementsizebits="16" mmedrowcount="10" mmedmajorstridebits="0" mmedminorstridebits="0" />
-      <units>Nm</units>
-      <decimalpl>2</decimalpl>
-      <min>0.000000</min>
-      <max>255.000000</max>
-      <outputtype>2</outputtype>
-      <MATH equation="X*6-204">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-  </XDFTABLE>
-  <XDFTABLE uniqueid="0x33F6" flags="0x0">
-    <title>HS 1-&gt;2 Torque (Nm)</title>
-    <CATEGORYMEM index="0" category="7" />
-    <CATEGORYMEM index="1" category="22" />
-    <XDFAXIS id="x" uniqueid="0x0">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedelementsizebits="8" mmedmajorstridebits="-32" mmedminorstridebits="0" />
-      <units>Nm</units>
-      <indexcount>1</indexcount>
-      <datatype>0</datatype>
-      <unittype>0</unittype>
-      <DALINK index="0" />
-      <LABEL index="0" value="0.00" />
-      <MATH equation="X">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-    <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x582A0" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <units>Nm</units>
-      <indexcount>10</indexcount>
-      <outputtype>2</outputtype>
-      <embedinfo type="1" />
-      <datatype>0</datatype>
-      <unittype>0</unittype>
-      <DALINK index="0" />
-      <MATH equation="X*6-204">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-    <XDFAXIS id="z">
-      <EMBEDDEDDATA mmedaddress="0x582A0" mmedelementsizebits="16" mmedrowcount="10" mmedmajorstridebits="0" mmedminorstridebits="0" />
-      <units>Nm</units>
-      <decimalpl>2</decimalpl>
-      <min>0.000000</min>
-      <max>255.000000</max>
-      <outputtype>2</outputtype>
-      <MATH equation="X*6-204">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-  </XDFTABLE>
-  <XDFTABLE uniqueid="0x5BCA" flags="0x0">
-    <title>HS 2-&gt;3 Torque (Nm)</title>
-    <CATEGORYMEM index="0" category="7" />
-    <CATEGORYMEM index="1" category="22" />
-    <XDFAXIS id="x" uniqueid="0x0">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedelementsizebits="8" mmedmajorstridebits="-32" mmedminorstridebits="0" />
-      <units>Nm</units>
-      <indexcount>1</indexcount>
-      <datatype>0</datatype>
-      <unittype>0</unittype>
-      <DALINK index="0" />
-      <LABEL index="0" value="0.00" />
-      <MATH equation="X">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-    <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x5840C" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <units>Nm</units>
-      <indexcount>10</indexcount>
-      <outputtype>2</outputtype>
-      <embedinfo type="1" />
-      <datatype>0</datatype>
-      <unittype>0</unittype>
-      <DALINK index="0" />
-      <MATH equation="X*6-204">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-    <XDFAXIS id="z">
-      <EMBEDDEDDATA mmedaddress="0x5840C" mmedelementsizebits="16" mmedrowcount="10" mmedmajorstridebits="0" mmedminorstridebits="0" />
-      <units>Nm</units>
-      <decimalpl>2</decimalpl>
-      <min>0.000000</min>
-      <max>255.000000</max>
-      <outputtype>2</outputtype>
-      <MATH equation="X*6-204">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-  </XDFTABLE>
-  <XDFTABLE uniqueid="0x6E86" flags="0x0">
-    <title>HS 3-&gt;4 Torque (Nm)</title>
-    <CATEGORYMEM index="0" category="7" />
-    <CATEGORYMEM index="1" category="22" />
-    <XDFAXIS id="x" uniqueid="0x0">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedelementsizebits="8" mmedmajorstridebits="-32" mmedminorstridebits="0" />
-      <units>Nm</units>
-      <indexcount>1</indexcount>
-      <datatype>0</datatype>
-      <unittype>0</unittype>
-      <DALINK index="0" />
-      <LABEL index="0" value="0.00" />
-      <MATH equation="X">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-    <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x5861C" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <units>Nm</units>
-      <indexcount>10</indexcount>
-      <outputtype>2</outputtype>
-      <embedinfo type="1" />
-      <datatype>0</datatype>
-      <unittype>0</unittype>
-      <DALINK index="0" />
-      <MATH equation="X*6-204">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-    <XDFAXIS id="z">
-      <EMBEDDEDDATA mmedaddress="0x5861C" mmedelementsizebits="16" mmedrowcount="10" mmedmajorstridebits="0" mmedminorstridebits="0" />
-      <units>Nm</units>
-      <decimalpl>2</decimalpl>
-      <min>0.000000</min>
-      <max>255.000000</max>
-      <outputtype>2</outputtype>
-      <MATH equation="X*6-204">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-  </XDFTABLE>
-  <XDFTABLE uniqueid="0x304D" flags="0x0">
-    <title>HS 4-&gt;5 Torque (Nm)</title>
-    <CATEGORYMEM index="0" category="7" />
-    <CATEGORYMEM index="1" category="22" />
-    <XDFAXIS id="x" uniqueid="0x0">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedelementsizebits="8" mmedmajorstridebits="-32" mmedminorstridebits="0" />
-      <units>Nm</units>
-      <indexcount>1</indexcount>
-      <datatype>0</datatype>
-      <unittype>0</unittype>
-      <DALINK index="0" />
-      <LABEL index="0" value="0.00" />
-      <MATH equation="X">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-    <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x5882C" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <units>Nm</units>
-      <indexcount>10</indexcount>
-      <outputtype>2</outputtype>
-      <embedinfo type="1" />
-      <datatype>0</datatype>
-      <unittype>0</unittype>
-      <DALINK index="0" />
-      <MATH equation="X*6-204">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-    <XDFAXIS id="z">
-      <EMBEDDEDDATA mmedaddress="0x5882C" mmedelementsizebits="16" mmedrowcount="10" mmedmajorstridebits="0" mmedminorstridebits="0" />
-      <units>Nm</units>
-      <decimalpl>2</decimalpl>
-      <min>0.000000</min>
-      <max>255.000000</max>
-      <outputtype>2</outputtype>
-      <MATH equation="X*6-204">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-  </XDFTABLE>
-  <XDFTABLE uniqueid="0x1998" flags="0x0">
-    <title>HS 5-&gt;6 Torque (Nm)</title>
-    <CATEGORYMEM index="0" category="7" />
-    <CATEGORYMEM index="1" category="22" />
-    <XDFAXIS id="x" uniqueid="0x0">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedelementsizebits="8" mmedmajorstridebits="-32" mmedminorstridebits="0" />
-      <units>Nm</units>
-      <indexcount>1</indexcount>
-      <datatype>0</datatype>
-      <unittype>0</unittype>
-      <DALINK index="0" />
-      <LABEL index="0" value="0.00" />
-      <MATH equation="X">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-    <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x58A3C" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <units>Nm</units>
-      <indexcount>10</indexcount>
-      <outputtype>2</outputtype>
-      <embedinfo type="1" />
-      <datatype>0</datatype>
-      <unittype>0</unittype>
-      <DALINK index="0" />
-      <MATH equation="X*6-204">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-    <XDFAXIS id="z">
-      <EMBEDDEDDATA mmedaddress="0x58A3C" mmedelementsizebits="16" mmedrowcount="10" mmedmajorstridebits="0" mmedminorstridebits="0" />
-      <units>Nm</units>
-      <decimalpl>2</decimalpl>
-      <min>0.000000</min>
-      <max>255.000000</max>
-      <outputtype>2</outputtype>
-      <MATH equation="X*6-204">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-  </XDFTABLE>
-  <XDFTABLE uniqueid="0x58CC" flags="0x0">
-    <title>HS 1-&gt;2 Torque (Nm)</title>
-    <CATEGORYMEM index="0" category="8" />
-    <CATEGORYMEM index="1" category="23" />
-    <XDFAXIS id="x" uniqueid="0x0">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedelementsizebits="8" mmedmajorstridebits="-32" mmedminorstridebits="0" />
-      <units>Nm</units>
-      <indexcount>1</indexcount>
-      <datatype>0</datatype>
-      <unittype>0</unittype>
-      <DALINK index="0" />
-      <LABEL index="0" value="0.00" />
-      <MATH equation="X">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-    <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x578F4" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <units>Nm</units>
-      <indexcount>10</indexcount>
-      <outputtype>2</outputtype>
-      <embedinfo type="1" />
-      <datatype>0</datatype>
-      <unittype>0</unittype>
-      <DALINK index="0" />
-      <MATH equation="X*6-204">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-    <XDFAXIS id="z">
-      <EMBEDDEDDATA mmedaddress="0x578F4" mmedelementsizebits="16" mmedrowcount="10" mmedmajorstridebits="0" mmedminorstridebits="0" />
-      <units>Nm</units>
-      <decimalpl>2</decimalpl>
-      <min>0.000000</min>
-      <max>255.000000</max>
-      <outputtype>2</outputtype>
-      <MATH equation="X*6-204">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-  </XDFTABLE>
-  <XDFTABLE uniqueid="0x6157" flags="0x0">
-    <title>HS 2-&gt;3 Torque (Nm)</title>
-    <CATEGORYMEM index="0" category="8" />
-    <CATEGORYMEM index="1" category="23" />
-    <XDFAXIS id="x" uniqueid="0x0">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedelementsizebits="8" mmedmajorstridebits="-32" mmedminorstridebits="0" />
-      <units>Nm</units>
-      <indexcount>1</indexcount>
-      <datatype>0</datatype>
-      <unittype>0</unittype>
-      <DALINK index="0" />
-      <LABEL index="0" value="0.00" />
-      <MATH equation="X">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-    <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x57A60" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>10</indexcount>
-      <outputtype>2</outputtype>
-      <embedinfo type="1" />
-      <datatype>0</datatype>
-      <unittype>0</unittype>
-      <DALINK index="0" />
-      <MATH equation="X*6-204">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-    <XDFAXIS id="z">
-      <EMBEDDEDDATA mmedaddress="0x57A60" mmedelementsizebits="16" mmedrowcount="10" mmedmajorstridebits="0" mmedminorstridebits="0" />
-      <units>Nm</units>
-      <decimalpl>2</decimalpl>
-      <min>0.000000</min>
-      <max>255.000000</max>
-      <outputtype>2</outputtype>
-      <MATH equation="X*6-204">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-  </XDFTABLE>
-  <XDFTABLE uniqueid="0x3195" flags="0x0">
-    <title>HS 3-&gt;4 Torque (Nm)</title>
-    <CATEGORYMEM index="0" category="8" />
-    <CATEGORYMEM index="1" category="23" />
-    <XDFAXIS id="x" uniqueid="0x0">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedelementsizebits="8" mmedmajorstridebits="-32" mmedminorstridebits="0" />
-      <units>Nm</units>
-      <indexcount>1</indexcount>
-      <datatype>0</datatype>
-      <unittype>0</unittype>
-      <DALINK index="0" />
-      <LABEL index="0" value="0.00" />
-      <MATH equation="X">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-    <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x57C70" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <units>Nm</units>
-      <indexcount>10</indexcount>
-      <outputtype>2</outputtype>
-      <embedinfo type="1" />
-      <datatype>0</datatype>
-      <unittype>0</unittype>
-      <DALINK index="0" />
-      <MATH equation="X*6-204">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-    <XDFAXIS id="z">
-      <EMBEDDEDDATA mmedaddress="0x57C70" mmedelementsizebits="16" mmedrowcount="10" mmedmajorstridebits="0" mmedminorstridebits="0" />
-      <units>Nm</units>
-      <decimalpl>2</decimalpl>
-      <min>0.000000</min>
-      <max>255.000000</max>
-      <outputtype>2</outputtype>
-      <MATH equation="X*6-204">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-  </XDFTABLE>
-  <XDFTABLE uniqueid="0x550E" flags="0x0">
-    <title>HS 4-&gt;5 Torque (Nm)</title>
-    <CATEGORYMEM index="0" category="8" />
-    <CATEGORYMEM index="1" category="23" />
-    <XDFAXIS id="x" uniqueid="0x0">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedelementsizebits="8" mmedmajorstridebits="-32" mmedminorstridebits="0" />
-      <units>Nm</units>
-      <indexcount>1</indexcount>
-      <datatype>0</datatype>
-      <unittype>0</unittype>
-      <DALINK index="0" />
-      <LABEL index="0" value="0.00" />
-      <MATH equation="X">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-    <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x57E80" mmedelementsizebits="16" mmedcolcount="10" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <units>Nm</units>
-      <indexcount>10</indexcount>
-      <outputtype>2</outputtype>
-      <embedinfo type="1" />
-      <datatype>0</datatype>
-      <unittype>0</unittype>
-      <DALINK index="0" />
-      <MATH equation="X*6-204">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-    <XDFAXIS id="z">
-      <EMBEDDEDDATA mmedaddress="0x57E80" mmedelementsizebits="16" mmedrowcount="10" mmedmajorstridebits="0" mmedminorstridebits="0" />
-      <units>Nm</units>
-      <decimalpl>2</decimalpl>
-      <min>0.000000</min>
-      <max>255.000000</max>
-      <outputtype>2</outputtype>
-      <MATH equation="X*6-204">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-  </XDFTABLE>
-  <XDFTABLE uniqueid="0x7153" flags="0x0">
-    <title>HS 5-&gt;6 Torque (Nm)</title>
-    <CATEGORYMEM index="0" category="8" />
-    <CATEGORYMEM index="1" category="23" />
-    <XDFAXIS id="x" uniqueid="0x0">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedelementsizebits="8" mmedmajorstridebits="-32" mmedminorstridebits="0" />
-      <units>Nm</units>
-      <indexcount>1</indexcount>
-      <datatype>0</datatype>
-      <unittype>0</unittype>
-      <DALINK index="0" />
-      <LABEL index="0" value="0.00" />
-      <MATH equation="X">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-    <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x58090" mmedelementsizebits="16" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <units>Nm</units>
-      <indexcount>10</indexcount>
-      <outputtype>2</outputtype>
-      <embedinfo type="1" />
-      <datatype>0</datatype>
-      <unittype>0</unittype>
-      <DALINK index="0" />
-      <MATH equation="X*6-204">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-    <XDFAXIS id="z">
-      <EMBEDDEDDATA mmedaddress="0x58090" mmedelementsizebits="16" mmedrowcount="10" mmedmajorstridebits="0" mmedminorstridebits="0" />
-      <units>Nm</units>
-      <decimalpl>2</decimalpl>
-      <min>0.000000</min>
-      <max>255.000000</max>
-      <outputtype>2</outputtype>
-      <MATH equation="X*6-204">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-  </XDFTABLE>
-  <XDFTABLE uniqueid="0x3726" flags="0x0">
-    <title>Uphill A1 Throttle (Different between stock and Alpina)</title>
-    <CATEGORYMEM index="0" category="9" />
-    <CATEGORYMEM index="1" category="24" />
-    <XDFAXIS id="x" uniqueid="0x0">
-      <EMBEDDEDDATA mmedtypeflags="0x02" mmedelementsizebits="8" mmedmajorstridebits="-32" mmedminorstridebits="0" />
-      <indexcount>1</indexcount>
-      <datatype>0</datatype>
-      <unittype>0</unittype>
-      <DALINK index="0" />
-      <LABEL index="0" value="0.00" />
-      <MATH equation="X">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-    <XDFAXIS id="y" uniqueid="0x0">
-      <EMBEDDEDDATA mmedaddress="0x6ED14" mmedelementsizebits="16" mmedcolcount="13" mmedmajorstridebits="16" mmedminorstridebits="0" />
-      <indexcount>13</indexcount>
-      <decimalpl>1</decimalpl>
-      <outputtype>2</outputtype>
-      <embedinfo type="1" />
-      <datatype>0</datatype>
-      <unittype>0</unittype>
-      <DALINK index="0" />
-      <MATH equation="X/10">
-        <VAR id="X" />
-      </MATH>
-    </XDFAXIS>
-    <XDFAXIS id="z">
-      <EMBEDDEDDATA mmedaddress="0x6ED14" mmedelementsizebits="16" mmedrowcount="13" mmedmajorstridebits="0" mmedminorstridebits="0" />
-      <decimalpl>1</decimalpl>
-      <min>0.000000</min>
-      <max>255.000000</max>
-      <outputtype>2</outputtype>
-      <MATH equation="X/10">
         <VAR id="X" />
       </MATH>
     </XDFAXIS>
